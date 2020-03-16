@@ -12,12 +12,12 @@ import datetime
 def check_user_validity(request):
     username = request.query_params.get('user', None)
     if username == None:
-        return 1
+        return '1'
     try:
         user = User.objects.get(username=username)
         return user
     except User.DoesNotExist:
-        return 2
+        return '2'
 
 error_messages = {
                 'user':{'1': 'specify user=<username> as a query parameter',
@@ -32,7 +32,7 @@ def check_story_validity(story_id):
         story = Story.objects.get(pk=story_id)
         return story
     except Story.DoesNotExist:
-        return 2
+        return '2'
 
 @api_view(['GET', 'POST'])
 def stories_list(request):
