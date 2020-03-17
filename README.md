@@ -7,6 +7,23 @@ Models are implemented using Django's ORM
 - There are two user_types considered here - 'user' and 'admin'
 - There is no login / token mechanism implemented to keep track of which user is accessing the endpoints - instead a primitive approach is used - `user=<username>` is passed as a query parameter to the all requests.
 
+For creating and editing users, the following endpoints are available
+- `POST /users`
+    - for creating users
+    - sample request body to pass to this request
+
+            {
+            "username":"boss",
+            "name":"admin",
+            "user_type":"admin"
+            }
+        
+    - `user_type` may have values `user` or `admin` 
+- `GET /users`
+    - for getting list of all users
+- `GET|PUT|DELETE /users/<user_id>`
+    - for viewing, editing, deleting a user
+
 **Note**:
 - `user=<username>` is a mandatory query parameter for all requests
 
