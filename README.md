@@ -2,12 +2,15 @@
 #### Implemented using Django
 Models are implemented using Django's ORM
 
-#### Brief Description
+### Brief Description
 - This app has been designed as a REST service accepts JSON input and responds with JSON
 - There are two user_types considered here - 'user' and 'admin'
 - There is no login / token mechanism implemented to keep track of which user is accessing the endpoints - instead a primitive approach is used - `user=<username>` is passed as a query parameter to the all requests.
 
-For creating and editing users, the following endpoints are available
+****
+
+### API Specification
+**For creating and editing users, the following endpoints are available**
 - `POST /users`
     - for creating users
     - sample request body to pass to this request
@@ -25,11 +28,11 @@ For creating and editing users, the following endpoints are available
     - for viewing, editing, deleting a user
 
 **Note**:
-- `user=<username>` is a mandatory query parameter for all requests
+- `user=<username>` is a mandatory query parameter for all requests below which query and manipulate stories
 
 1. The following endpoints are exposed for users
 
-    1. `GET /stories/?user=<username>` 
+    1. `GET /stories?user=<username>` 
         - returns list of all stories (for admin)
         - returns list of all stories created by user (for regular user)
         - `status=<status>` is an optional parameter to filter stories by status
@@ -41,7 +44,7 @@ For creating and editing users, the following endpoints are available
           it is sufficient to pass parameters 
              of the story that require to be updated
 
-    3. `POST /stories/?user=<username>`
+    3. `POST /stories?user=<username>`
          - body of post request expects to have a story object 
     with the following parameters as shown in this example 
         ```
@@ -70,9 +73,10 @@ For creating and editing users, the following endpoints are available
     - APPROVED -> DRAFT (if user/admin updates approved story)
     - REJECTED -> DRAFT (if user/admin updates rejected story)
      
+****
 
-###### Setup
-Requirements
+### Setup
+**Requirements**
 1. django
 2. django-rest-framework
 3. git
