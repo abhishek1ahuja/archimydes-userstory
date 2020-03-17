@@ -58,5 +58,20 @@ Models are implemented using Django's ORM
 Requirements
 1. django
 2. django-rest-framework
+3. git
+
+**Instructions to clone project and run:**
+
+1. use `pip` to install `django` and `django-rest-framework`
+    1. `pip install django`
+    2. `pip install django-rest-framework`
+2. clone the userstory project and checkout the `dev` branch
+    1. `git clone https://github.com/abhishek1ahuja/archimydes-userstory.git`
+    2. `git checkout dev`
+3. To run the app server
+    1. `python3 -m manage.py runserver`
+4. To run all tests
+    1. `python3 -m manage.py test userstory`
+    
 
 
