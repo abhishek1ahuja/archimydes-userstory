@@ -89,10 +89,12 @@ Models are implemented using Django's ORM
 2. clone the userstory project and checkout the `dev` branch
     1. `git clone https://github.com/abhishek1ahuja/archimydes-userstory.git`
     2. `git checkout dev`
-3. To run the app server
-    1. `python3 -m manage.py runserver`
-4. To run all tests
-    1. `python3 -m manage.py test userstory`
+3. run django migration to create required database tables
+    1. `python3 manage.py migrate`
+4. To run the app server
+    1. `python3 manage.py runserver`
+5. To run all tests
+    1. `python3 manage.py test userstory`
     
 
 
